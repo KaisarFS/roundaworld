@@ -1,0 +1,42 @@
+{
+  "extends": ["airbnb", "airbnb/hooks", "plugin:tailwindcss/recommended"],
+  "plugins": ["react-hooks", "tailwindcss"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "no-console": "warn",
+    "tailwindcss/no-custom-classname": "off",
+    "no-plusplus": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx", "**/*.js"],
+      "rules": {
+        "no-use-before-define": "off",
+        "no-shadow": "off"
+      }
+    }
+  ]
+}
