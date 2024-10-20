@@ -1,4 +1,4 @@
-import { RectangleStackIcon, UserCircleIcon, CommandLineIcon } from '@heroicons/react/24/solid';
+import { RectangleStackIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 
 export const NAV_MENU = [
   {

@@ -44,7 +44,7 @@ export default function Navbar() {
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
           <Button variant="text">Sign In</Button>
-          <a href="#" target="_blank">
+          <a href="#countries">
             <Button color="gray">Explore</Button>
           </a>
         </div>
@@ -73,7 +73,7 @@ export default function Navbar() {
           </ul>
           <div className="mb-4 mt-6 flex items-center gap-2">
             <Button variant="text">Sign In</Button>
-            <a href="#" target="_blank">
+            <a href="https://www.lipsum.com/" target="_blank" rel="noreferrer">
               <Button color="gray">blocks</Button>
             </a>
           </div>

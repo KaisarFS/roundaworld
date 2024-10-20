@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
     <footer className="mx-auto mt-auto w-full max-w-[85rem] border-t-2 border-gray-300 px-4 py-10 sm:px-6 lg:px-8">
       <div className="text-center">
         <div>
-          <a
+          <Link
             className="flex-none text-xl font-semibold text-black"
-            href="#"
+            to="/"
             aria-label="Brand"
           >
             RoundaWorld
-          </a>
+          </Link>
         </div>
 
         <div className="mt-3">
@@ -19,7 +20,8 @@ export default function Footer() {
             Made with love ❤️&nbsp;
             <a
               className="font-medium text-blue-600 decoration-2 hover:underline focus:underline focus:outline-none"
-              href="#"
+              href="https://www.lipsum.com/"
+              aria-label="social-smedia"
             >
               Tampan&nbsp;
             </a>
@@ -31,7 +33,8 @@ export default function Footer() {
         <div className="mt-3 space-x-2">
           <a
             className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-semibold text-gray-500 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-            href="#"
+            href="https://www.lipsum.com/"
+            aria-label="social-smedia"
           >
             <svg
               className="size-3.5 shrink-0"
@@ -46,7 +49,8 @@ export default function Footer() {
           </a>
           <a
             className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-semibold text-gray-500 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-            href="#"
+            href="https://www.lipsum.com/"
+            aria-label="social-smedia"
           >
             <svg
               className="size-3.5 shrink-0"
@@ -61,7 +65,8 @@ export default function Footer() {
           </a>
           <a
             className="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent text-sm font-semibold text-gray-500 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-            href="#"
+            href="https://www.lipsum.com/"
+            aria-label="social-smedia"
           >
             <svg
               className="size-3.5 shrink-0"

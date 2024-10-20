@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
-  Dialog, DialogHeader, DialogBody, DialogFooter, Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Button,
 } from '@material-tailwind/react';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { removeCooperation } from '../features/countrySlice';
@@ -33,9 +37,7 @@ export default function CooperationList() {
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl dark:text-white">
             Countries that have
-            {' '}
             <span className="text-blue-600">collaborated</span>
-            {' '}
             with you
           </h1>
           <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
@@ -62,8 +64,15 @@ export default function CooperationList() {
                   />
                   <div className="absolute bottom-1 end-1 opacity-0 transition group-hover:opacity-100">
                     <div
+                      role="button"
+                      tabIndex={0}
                       className="flex cursor-pointer items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
                       onClick={() => handleOpen(country)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          handleOpen(country);
+                        }
+                      }}
                     >
                       <TrashIcon className="size-4 text-gray-800 dark:text-neutral-200" />
                       <span className="text-xs">Remove</span>
@@ -81,7 +90,6 @@ export default function CooperationList() {
                 <p>
                   Are you sure you want to remove
                   {selectedCountry.name}
-                  {' '}
                   from cooperation?
                 </p>
               ) : (
@@ -89,7 +97,12 @@ export default function CooperationList() {
               )}
             </DialogBody>
             <DialogFooter>
-              <Button variant="text" color="red" onClick={() => setOpen(false)} className="mr-1">
+              <Button
+                variant="text"
+                color="red"
+                onClick={() => setOpen(false)}
+                className="mr-1"
+              >
                 <span>Cancel</span>
               </Button>
               <Button variant="gradient" color="green" onClick={handleRemove}>
@@ -99,7 +112,11 @@ export default function CooperationList() {
           </Dialog>
 
           <div className="mt-6 text-center">
-            <Button onClick={() => navigate('/')} color="blue" className="px-4 py-2">
+            <Button
+              onClick={() => navigate('/')}
+              color="blue"
+              className="px-4 py-2"
+            >
               Back to Home
             </Button>
           </div>

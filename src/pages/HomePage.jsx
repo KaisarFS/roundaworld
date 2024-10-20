@@ -94,7 +94,7 @@ export default function Countries() {
   return (
     <section className="px-8 py-4 md:py-28">
       <div className="container mx-auto mb-20 text-start">
-        <Typography variant="h2" color="blue-gray" className="mb-4">
+        <Typography id="countries" variant="h2" color="blue-gray" className="mb-4">
           All Countries
         </Typography>
         <Typography

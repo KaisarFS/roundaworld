@@ -21,7 +21,7 @@ export default function ProjectCard({ name, flags, cca3 }) {
         </CardHeader>
         <CardBody className="p-0">
           <a
-            href="#"
+            href="https://www.lipsum.com/"
             className="text-blue-gray-900 transition-colors hover:text-gray-800"
           >
             <Typography variant="h5" className="mb-2">

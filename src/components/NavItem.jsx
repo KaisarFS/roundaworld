@@ -1,6 +1,5 @@
 // src/components/NavItem.js
 import React from 'react';
-import { Typography } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
 
 function NavItem({ children, href }) {
