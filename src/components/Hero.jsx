@@ -33,7 +33,7 @@ export default function Hero() {
             <div className="mt-8 flex justify-center gap-3">
               <a
                 className="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                href="https://www.lipsum.com/"
+                href="#countries"
               >
                 Explore
                 <svg
