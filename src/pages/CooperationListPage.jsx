@@ -36,9 +36,9 @@ export default function CooperationList() {
       <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl dark:text-white">
-            Countries that have
+            Countries that have&nbsp;
             <span className="text-blue-600">collaborated</span>
-            with you
+            &nbsp;with you
           </h1>
           <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
             List of countries that have established cooperation with you.
@@ -65,6 +65,7 @@ export default function CooperationList() {
                   <div className="absolute bottom-1 end-1 opacity-0 transition group-hover:opacity-100">
                     <div
                       role="button"
+                      data-testid="remove-country"
                       tabIndex={0}
                       className="flex cursor-pointer items-center gap-x-1 rounded-lg border border-gray-200 bg-white px-2 py-1 text-gray-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
                       onClick={() => handleOpen(country)}
