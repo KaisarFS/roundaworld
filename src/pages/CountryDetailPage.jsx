@@ -1,3 +1,7 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable comma-dangle */
+/* eslint-disable indent */
+/* eslint-disable no-alert */
 import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -14,10 +18,8 @@ export default function CountryDetail() {
   const { countryCode } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {
-    countryDetail, detailStatus, detailError, cooperation,
-  } = useSelector(
-    (state) => state.countries,
+  const { countryDetail, detailStatus, detailError, cooperation } = useSelector(
+    (state) => state.countries
   );
   const desktopMapRef = useRef(null);
   const mobileMapRef = useRef(null);
@@ -61,21 +63,24 @@ export default function CountryDetail() {
         'desktop-map',
         countryDetail.latlng[0],
         countryDetail.latlng[1],
-        desktopMapRef,
+        desktopMapRef
       );
 
       initializeMap(
         'mobile-map',
         countryDetail.latlng[0],
         countryDetail.latlng[1],
-        mobileMapRef,
+        mobileMapRef
       );
     }
   }, [countryDetail]);
 
   if (detailStatus === 'loading') {
     return (
-      <div className="custom-loader flex w-1/2 items-center justify-center" />
+      <div
+        data-testid="custom-loader"
+        className="custom-loader flex w-1/2 items-center justify-center"
+      />
     );
   }
 
@@ -101,12 +106,12 @@ export default function CountryDetail() {
     if (success) {
       dispatch(addCooperation(countryDetail));
       alert(
-        `${countryDetail.name.common} has successfully entered into cooperation!`,
+        `${countryDetail.name.common} has successfully entered into cooperation!`
       );
       navigate('/cooperation');
     } else {
       alert(
-        `Failed to establish cooperation with ${countryDetail.name.common}. Try again!`,
+        `Failed to establish cooperation with ${countryDetail.name.common}. Try again!`
       );
     }
   };
@@ -126,20 +131,21 @@ export default function CountryDetail() {
   The country you are viewing is ${name.common}.
   ${flags.alt ? flags.alt : ''}
   The languages spoken in ${name.common} are ${Object.values(languages).join(
-  ', ',
-)}.
+    ', '
+  )}.
   The official currency of ${name.common} is ${
-  Object.values(currencies)[0].name
-} (${Object.values(currencies)[0].symbol}).
+    Object.values(currencies)[0].name
+  } 
+  (${Object.values(currencies)[0].symbol}).
   Is ${name.common} an independent country? ${
-  countryDetail.independent ? 'Yes' : 'No'
-}.
+    countryDetail.independent ? 'Yes' : 'No'
+  }.
   The capital city of ${name.common} is ${
-  capital ? capital[0] : 'not available'
-}.
+    capital ? capital[0] : 'not available'
+  }.
   The population of ${
-  name.common
-} is approximately ${population.toLocaleString()}.
+    name.common
+  } is approximately ${population.toLocaleString()}.
   `;
 
   return (
@@ -219,7 +225,6 @@ export default function CountryDetail() {
               </div>
               <p className="mt-4 text-center font-bold italic">
                 {name.official}
-                {' '}
                 coat of arms
               </p>
             </>
@@ -299,7 +304,6 @@ export default function CountryDetail() {
               </div>
               <p className="mt-4 text-center font-bold italic">
                 {name.official}
-                {' '}
                 coat of arms
               </p>
             </>
