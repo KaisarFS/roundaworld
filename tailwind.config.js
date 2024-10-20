@@ -19,7 +19,6 @@ module.exports = withMT({
         },
       },
       colors: {
-        // eslint-disable-next-line import/no-extraneous-dependencies, global-require
         violet: require('tailwindcss/colors').violet,
       },
     },

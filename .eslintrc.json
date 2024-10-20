@@ -22,6 +22,8 @@
     "no-plusplus": "off",
     "react/no-array-index-key": "off",
     "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": "off",
+    "global-require": "off",
     "no-param-reassign": [
       "error",
       {
