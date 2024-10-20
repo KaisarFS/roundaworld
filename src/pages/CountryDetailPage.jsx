@@ -77,10 +77,12 @@ export default function CountryDetail() {
 
   if (detailStatus === 'loading') {
     return (
-      <div
-        data-testid="custom-loader"
-        className="custom-loader flex w-1/2 items-center justify-center"
-      />
+      <div className="cointainer flex h-screen w-screen items-center justify-center">
+        <div
+          data-testid="custom-loader"
+          className="custom-loader flex w-1/2 items-center justify-center"
+        />
+      </div>
     );
   }
 

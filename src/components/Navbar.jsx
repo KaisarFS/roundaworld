@@ -61,11 +61,11 @@ export default function Navbar() {
           )}
         </IconButton>
       </div>
-      <Collapse open={open}>
+      <Collapse open={open} className="pointer-events-auto z-[9999]">
         <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
           <ul className="flex flex-col gap-4">
-            {NAV_MENU.map(({ name, icon: Icon }) => (
-              <NavItem key={name}>
+            {NAV_MENU.map(({ name, icon: Icon, href }) => (
+              <NavItem key={name} href={href}>
                 <Icon className="size-5" />
                 {name}
               </NavItem>
@@ -73,8 +73,8 @@ export default function Navbar() {
           </ul>
           <div className="mb-4 mt-6 flex items-center gap-2">
             <Button variant="text">Sign In</Button>
-            <a href="https://www.lipsum.com/" target="_blank" rel="noreferrer">
-              <Button color="gray">blocks</Button>
+            <a href="#countries" target="_blank" rel="noreferrer">
+              <Button color="gray">Explore</Button>
             </a>
           </div>
         </div>

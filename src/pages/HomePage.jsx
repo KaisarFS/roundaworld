@@ -79,7 +79,14 @@ export default function Countries() {
   });
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return (
+      <div className="cointainer flex h-screen w-screen items-center justify-center">
+        <div
+          data-testid="custom-loader"
+          className="custom-loader flex w-1/2 items-center justify-center"
+        />
+      </div>
+    );
   }
 
   if (status === 'failed') {
