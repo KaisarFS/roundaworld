@@ -14,7 +14,7 @@ export default function ProjectCard({ name, flags, cca3 }) {
       <Card color="transparent" shadow={false}>
         <CardHeader floated={false} className="mx-0 mb-6 mt-0 h-48">
           <img
-            src={flags.png}
+            src={flags?.png ? flags.png : 'fallback-image-url.png'}
             alt={name.common}
             className="size-full object-cover"
           />
