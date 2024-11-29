@@ -10,7 +10,11 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 import L from 'leaflet';
-import { fetchCountryDetail, addCooperation } from '../features/countrySlice';
+import {
+  fetchCountryDetail,
+  addCooperation,
+  removeCooperation,
+} from '../features/countrySlice';
 import 'leaflet/dist/leaflet.css';
 import Footer from '../components/Footer';
 
@@ -118,6 +122,11 @@ export default function CountryDetail() {
     }
   };
 
+  const handleCancelCooperation = () => {
+    dispatch(removeCooperation(countryDetail));
+    alert('Successfully removed from cooperation!');
+  };
+
   const {
     name,
     flags,
@@ -185,6 +194,7 @@ export default function CountryDetail() {
                 ? 'Already in Cooperation'
                 : 'Establish Cooperation'}
             </Button>
+            <Button onClick={handleCancelCooperation} style={{ display: isInCooperation ? 'block' : 'none' }}>Cancel Establish</Button>
           </div>
           <div className="flex items-center gap-6">
             <div className="mt-3 flex items-center gap-2">
