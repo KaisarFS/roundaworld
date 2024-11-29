@@ -8,16 +8,16 @@ import ProjectCard from '../components/ProjectCard';
 export default function Countries() {
   const dispatch = useDispatch();
   const { countries, status, error } = useSelector((state) => state.countries);
-
+  const [query, setQuery] = useState('');
   const [active, setActive] = useState(1);
   const countriesPerPage = 8;
   const totalPages = Math.ceil(countries.length / countriesPerPage);
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchCountries());
+      dispatch(fetchCountries(query));
     }
-  }, [status, dispatch]);
+  }, [status, query, dispatch]);
 
   const startIndex = (active - 1) * countriesPerPage;
   const currentCountries = countries.slice(
@@ -78,6 +78,11 @@ export default function Countries() {
     className: 'rounded-full',
   });
 
+  const handleSearch = (e) => {
+    setQuery(e.target.value);
+    dispatch(fetchCountries(e.target.value));
+  };
+
   if (status === 'loading') {
     return (
       <div className="cointainer flex h-screen w-screen items-center justify-center">
@@ -114,6 +119,9 @@ export default function Countries() {
           voluptas quaerat necessitatibus.
         </Typography>
       </div>
+
+      <input name="query" type="text" value={query} onChange={handleSearch} style={{ width: '100%', background: 'red' }} />
+      Testing 123
 
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 xl:grid-cols-4">
         {currentCountries.map((props, idx) => (

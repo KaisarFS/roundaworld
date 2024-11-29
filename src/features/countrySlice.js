@@ -12,8 +12,12 @@ const initialState = {
 
 export const fetchCountries = createAsyncThunk(
   'countries/fetchCountries',
-  async () => {
+  async (query) => {
     try {
+      if (query.length > 0) {
+        const response = await axios.get(`https://restcountries.com/v3.1/name/${query}`);
+        return response.data;
+      }
       const response = await axios.get('https://restcountries.com/v3.1/all');
       return response.data;
     } catch (error) {
