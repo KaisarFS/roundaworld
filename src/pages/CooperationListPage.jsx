@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Dialog,
   DialogHeader,
@@ -79,6 +79,9 @@ export default function CooperationList() {
                       <span className="text-xs">Remove</span>
                     </div>
                   </div>
+                  <Link to={`/country/${country.cca3}`}>
+                    <p>{country.name}</p>
+                  </Link>
                 </div>
               ))
             )}
